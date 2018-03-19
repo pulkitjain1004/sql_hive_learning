@@ -1,0 +1,32 @@
+SELECT COUNT(*)				# Number of observations / rows
+SELECT COUNT(Color)			# Number of Observations in Color OR Number of rows in which Color is NOT NULL
+FROM Table
+
+SELECT COUNT(*)	
+FROM Table
+WHERE Color = 'RED'			# observations when color is red
+
+
+SELECT MAX(ListPrice)			# Maximum of ListPrice 
+SELECT MIN
+SELECT AVG
+SELECT SUM
+
+
+
+SELECT MAX(ListPrice) AS MaxPrice
+       MIN(ListPrice) AS MinPrice
+       AVG(ListPrice) AS AvgPrice
+
+SELECT COUNT(*), MAX(ListPrice), COLOR
+FROM Table
+GROUP BY Color			# gives counts of individual color
+
+
+SELECT	COUNT(*) AS Count_of_Packs , MAX(UnitPrice) AS MaxPrice, PackageTypeID, LastEditedBy
+
+FROM WideWorldImporters.Sales.OrderLines
+
+GROUP BY PackageTypeID, LastEditedBy
+ORDER BY PackageTypeID, LastEditedBy
+

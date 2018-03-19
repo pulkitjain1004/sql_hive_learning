@@ -1,0 +1,12 @@
+SELECT TableB.*
+FROM TableA
+    JOIN TableB
+        ON TableB.ID1 = TableA.ID1
+    JOIN TableC
+        ON TableC.ID2 = TableB.ID2
+WHERE TableB.ID1 IN (
+	SELECT TableA.ID1
+	FROM TableA) AND
+      TableB.ID2 NOT IN (
+	SELECT TableC.ID2
+	FROM TableC)	

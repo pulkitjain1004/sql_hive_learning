@@ -1,0 +1,34 @@
+SELECT	OrderLineID, 
+		UnitPrice, 
+		TaxRate,
+		Quantity*UnitPrice AS ExtendedPrice,
+		Quantity*UnitPrice*(TaxRate/100) AS TaxDue,
+		FORMAT( Quantity*UnitPrice*(TaxRate/100), 'C' ) AS TaxDueinDollars,
+		FORMAT( (Quantity*UnitPrice)+(Quantity*UnitPrice*(TaxRate/100)), 'C') AS TotalPrice
+
+FROM WideWorldImporters.Sales.OrderLines
+
+
+# 'C' implies format is currency
+# it is not necessary to select before manipulating
+
+
+# Combine two text columns
+SELECT FirstName + ' ' + LastName
+
+
+# SELECT TOP 10
+#  SELECT TOP 25 PERCENT
+
+# SELECT DISTINCT OrderLineID
+# SELECT DISTINCT OrderLineID, Quantity  			# no need to repeat distinct
+# SELECT COUNT(DISTINCT OrderLineID)				# unique number of ...
+
+# select cast(sum(lat_n) as decimal(18,2)) , cast(sum(long_w) as decimal(18,2)) from station;
+
+# select CONCAT(name,'(',LEFT(occupation,1),')') 
+  FROM occupations order by name;
+  select CONCAT('There are a total of ',COUNT(name),' ',lower(occupation),'s.') 
+  from occupations 
+  group by occupation 
+  order by count(name);

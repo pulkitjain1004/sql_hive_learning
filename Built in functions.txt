@@ -1,0 +1,4 @@
+Built in functions of T SQL:
+
+https://technet.microsoft.com/en-us/library/ms174318(v=sql.110).aspx
+

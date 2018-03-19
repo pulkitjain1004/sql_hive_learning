@@ -1,0 +1,17 @@
+/* structure
+
+SELECT TOP <number_of_rows> <columns>
+
+FROM <table>
+
+JOIN <other tables>
+
+WHERE <filter condition>
+
+GROUP BY <grouping>
+
+HAVING <aggregate filter>
+
+ORDER BY <column list>
+
+*/
