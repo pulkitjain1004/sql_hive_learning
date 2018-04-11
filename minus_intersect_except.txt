@@ -1,0 +1,31 @@
+SELECT expression1, expression2, ... expression_n
+FROM tables
+[WHERE conditions]
+MINUS
+SELECT expression1, expression2, ... expression_n
+FROM tables
+[WHERE conditions];
+
+# select expressions must be same
+
+
+SELECT item FROM Lunch
+EXCEPT 
+SELECT item FROM Dinner;
+
+SELECT item FROM Lunch
+UNION 
+SELECT item FROM Dinner;
+
+SELECT Lunch.item 
+FROM Lunch 
+  LEFT OUTER JOIN Dinner 
+  ON Dinner.item = Lunch.item 
+WHERE dinner.item IS NULL;
+# WHERE Dinner.item IS NULL OR Lunch.item IS NULL;
+
+SELECT BusinessEntityID
+FROM HumanResources.Employee
+INTERSECT
+SELECT BusinessEntityID
+FROM HumanResources.JobCandidate;
